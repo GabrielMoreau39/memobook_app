@@ -6,7 +6,7 @@
 
   const route = useRoute()
   const hideOnRoutes = ['/connexion']
-  const hide = computed(() => !hideOnRoutes.some(path => route.path.sartsWith(path)))
+  const hide = computed(() => !hideOnRoutes.some(path => route.path.startsWith(path)))
 </script>
 
 <template>
