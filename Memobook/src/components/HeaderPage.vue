@@ -21,7 +21,7 @@
 </script>
 
 <template>
-    <div>
+    <header class="flex items-center justify-between">
         <RouterLink to="/" @click="closeMenu">
             <IconLogo />
         </RouterLink>
@@ -68,10 +68,10 @@
                 >
                 </li>
             </ul>
-        </nav>
         <div class="flex items-center justify-center gap-4 px-4">
-        <Button variant="outlined" text="Login" url="/login" />
-        <Button variant="dark" text="Sign Up" url="/signup" />
-      </div>
-    </div>
+            <Button variant="outlined" text="Login" url="/login" />
+            <Button variant="dark" text="Sign Up" url="/signup" />
+        </div>
+        </nav>
+    </header>
 </template>
