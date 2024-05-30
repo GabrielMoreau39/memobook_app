@@ -4,10 +4,19 @@
     
     import { RouterLink } from 'vue-router'
 
+    import { useRoute } from 'vue-router';
+
+    const route = useRoute();
+    const hideOnRoutes = ['']
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    import { computed } from 'vue';
+
+    const hide = computed(() => !hideOnRoutes.some(path => route.path.startsWith(path)));
+
     const activeMenu = ref(false)
 
     function closeMenu() {
-        activeMenu.value = false
+      activeMenu.value = false
 }
 </script>
 
@@ -35,31 +44,34 @@
                     class="block p-4 rounded-lg text-gray-500"
                     to="/properties/"
                     @click="closeMenu"
-                    >Rent</RouterLink
+                    >VIP</RouterLink
                 >
                 </li>
                 <li>
                 <RouterLink class="block p-4 rounded-lg text-gray-500" to="/buy" @click="closeMenu"
-                    >Buy</RouterLink
+                    >Défis</RouterLink
                 >
                 </li>
                 <li>
                 <RouterLink class="block p-4 rounded-lg text-gray-500" to="/sell" @click="closeMenu"
-                    >Sell</RouterLink
+                    >Reminder</RouterLink
                 >
                 </li>
                 <li>
                 <RouterLink class="block p-4 rounded-lg text-gray-500" to="/manage" @click="closeMenu"
-                    >Manage property</RouterLink
+                    >Amis</RouterLink
                 >
                 </li>
                 <li>
                 <RouterLink class="block p-4 rounded-lg text-gray-500" to="/resources" @click="closeMenu"
-                    >Resources</RouterLink
+                    >Activités</RouterLink
                 >
                 </li>
             </ul>
         </nav>
-
+        <div class="flex items-center justify-center gap-4 px-4">
+        <Button variant="outlined" text="Login" url="/login" />
+        <Button variant="dark" text="Sign Up" url="/signup" />
+      </div>
     </div>
 </template>
